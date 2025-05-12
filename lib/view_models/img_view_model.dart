@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/img.dart';
-import '../use_cases/fetch_img_gifs.dart';
+import '../use_cases/fetch_imgs.dart';
 import '../use_cases/fetch_img.dart';
 
 class ImgViewModel with ChangeNotifier {
