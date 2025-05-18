@@ -1,5 +1,4 @@
 import 'package:dotnet_cw/bloc/img_bloc.dart';
-import 'package:dotnet_cw/bloc/img_event.dart';
 import 'package:dotnet_cw/repositories/img_repository.dart';
 import 'package:dotnet_cw/use_cases/fetch_imgs.dart';
 import 'package:dotnet_cw/use_cases/fetch_img.dart';

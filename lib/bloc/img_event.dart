@@ -1,6 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'img_event.freezed.dart';
+part of 'img_bloc.dart';
 
 @freezed
 class ImgEvent with _$ImgEvent {

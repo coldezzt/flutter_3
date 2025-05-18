@@ -1,7 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:dotnet_cw/models/img.dart';
-
-part 'img_state.freezed.dart';
+part of 'img_bloc.dart';
 
 @freezed
 class ImgState with _$ImgState {

@@ -1,8 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:dotnet_cw/bloc/img_event.dart';
-import 'package:dotnet_cw/bloc/img_state.dart';
 import 'package:dotnet_cw/use_cases/fetch_imgs.dart';
 import 'package:dotnet_cw/use_cases/fetch_img.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../models/img.dart';
+
+part 'img_state.dart';
+part 'img_event.dart';
+part 'img_bloc.freezed.dart';
 
 class ImgBloc extends Bloc<ImgEvent, ImgState> {
   final FetchImgUseCase fetchImgUseCase;
@@ -26,8 +31,7 @@ class ImgBloc extends Bloc<ImgEvent, ImgState> {
     try {
       final img = await fetchImgUseCase.execute();
 
-      List<String> data2 = [];
-      data2 = state.data2 ?? [];
+      List<String> data2 =  (state as _Normal).data2;
 
       emit(ImgState.normal(
         data1: img,
@@ -43,11 +47,8 @@ class ImgBloc extends Bloc<ImgEvent, ImgState> {
     try {
       final newImgs = await fetchImgsUseCase.execute(event.page, event.limit);
 
-      List<String> currentImgs = [];
-      currentImgs = state.data2 ?? [];
-
-      String? data1;
-      data1 = state.data1;
+      List<String> currentImgs = (state as _Normal).data2;
+      Img? data1 = (state as _Normal).data1;
 
       emit(ImgState.normal(
         data1: data1,
